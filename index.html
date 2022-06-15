@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
+    <head>
+        <title>WebXR Application</title>
+        <link rel="icon" type="image/png" href="favicon.ico"/>
+        <meta name="description" content="3D Application">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script type="text/javascript" src="js/webxr.js"></script>
+        <script type="text/javascript" src="js/joystick.js"></script>
+        <script type="text/javascript" src="js/camera-cube-env.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onload="init();">
+        <a-scene   shadow="type: basic; autoUpdate: false;" renderer="antialias: false; colorManagement: false; physicallyCorrectLights: false;">
+            <!-- Assets -->
+            <a-assets>
+				<a-asset-item id="carpet" src="./assets/carpet.gltf"></a-asset-item>
+				<a-asset-item id="couch" src="./assets/couch.gltf"></a-asset-item>
+				<a-asset-item id="back" src="./assets/back.gltf"></a-asset-item>
+				<a-asset-item id="back.001" src="./assets/back.001.gltf"></a-asset-item>
+				<a-asset-item id="back.003" src="./assets/back.003.gltf"></a-asset-item>
+				<a-asset-item id="couch.002" src="./assets/couch.002.gltf"></a-asset-item>
+				<a-asset-item id="Cube" src="./assets/Cube.gltf"></a-asset-item>
+				<a-asset-item id="Cube.002" src="./assets/Cube.002.gltf"></a-asset-item>
+				<a-asset-item id="CURTAIN ROD" src="./assets/CURTAIN ROD.gltf"></a-asset-item>
+				<a-asset-item id="cushiion" src="./assets/cushiion.gltf"></a-asset-item>
+				<a-asset-item id="cushiion.001" src="./assets/cushiion.001.gltf"></a-asset-item>
+				<a-asset-item id="cushion" src="./assets/cushion.gltf"></a-asset-item>
+				<a-asset-item id="floor" src="./assets/floor.gltf"></a-asset-item>
+				<a-asset-item id="FRAME" src="./assets/FRAME.gltf"></a-asset-item>
+				<a-asset-item id="HOOK" src="./assets/HOOK.gltf"></a-asset-item>
+				<a-asset-item id="HOOK.001" src="./assets/HOOK.001.gltf"></a-asset-item>
+				<a-asset-item id="LEDGE" src="./assets/LEDGE.gltf"></a-asset-item>
+				<a-asset-item id="leg" src="./assets/leg.gltf"></a-asset-item>
+				<a-asset-item id="leg.001" src="./assets/leg.001.gltf"></a-asset-item>
+				<a-asset-item id="PICTUR" src="./assets/PICTUR.gltf"></a-asset-item>
+				<a-asset-item id="PICTUR.001" src="./assets/PICTUR.001.gltf"></a-asset-item>
+				<a-asset-item id="pillow" src="./assets/pillow.gltf"></a-asset-item>
+				<a-asset-item id="pillow.001" src="./assets/pillow.001.gltf"></a-asset-item>
+				<a-asset-item id="walls" src="./assets/walls.gltf"></a-asset-item>
+                <img id="sky"                 src="./resources/sky.jpg">
+                <img id="icon-play"           src="./resources/play.png">
+                <img id="icon-pause"          src="./resources/pause.png">
+                <img id="icon-play-skip-back" src="./resources/play-skip-back.png">
+                <img id="icon-mute"           src="./resources/mute.png">
+                <img id="icon-volume-low"     src="./resources/volume-low.png">
+                <img id="icon-volume-high"    src="./resources/volume-high.png">
+            </a-assets>
+
+            <!-- Entities -->
+            
+			<a-entity id="#carpet" gltf-model="#carpet"  scale="1 1 1" position="0.6287506818771362 0.1650000959634781 0.4640699028968811" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#couch" gltf-model="#couch"  scale="1 1 1" position="-0.8595555424690247 0.5361377000808716 0.44728946685791016" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#back" gltf-model="#back"  scale="1 1 1" position="-0.8378614187240601 0.7665902972221375 0.08366957306861877" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#back.001" gltf-model="#back.001"  scale="1 1 1" position="-0.8378614187240601 0.7665902972221375 0.8277221322059631" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#back.003" gltf-model="#back.003"  scale="1 1 1" position="0.5159591436386108 0.8362488150596619 -0.837496817111969" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#couch.002" gltf-model="#couch.002"  scale="1 1 1" position="0.5305994153022766 0.5015770196914673 -0.9641914367675781" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube" gltf-model="#Cube"  scale="1 1 1" position="-1.546051263809204 1.655427098274231 0.04137277603149414" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.002" gltf-model="#Cube.002"  scale="1 1 1" position="0.5512697696685791 0.3170691132545471 0.4217081665992737" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#CURTAIN ROD" gltf-model="#CURTAIN ROD"  scale="1 1 1" position="-1.2323018312454224 2.195125102996826 0.7695399522781372" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#cushiion" gltf-model="#cushiion"  scale="1 1 1" position="-0.552254855632782 0.6889987587928772 1.1158974170684814" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#cushiion.001" gltf-model="#cushiion.001"  scale="1 1 1" position="0.7167823910713196 0.8331520557403564 -0.46476098895072937" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#cushion" gltf-model="#cushion"  scale="1 1 1" position="-0.5684823989868164 0.6497406959533691 -0.1711384505033493" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#floor" gltf-model="#floor"  scale="1 1 1" position="0.0 0.0 -0.0" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FRAME" gltf-model="#FRAME"  scale="1 1 1" position="-1.5048291683197021 1.6370558738708496 0.04900781810283661" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#HOOK" gltf-model="#HOOK"  scale="1 1 1" position="-1.228018045425415 2.181983709335327 -0.7556012868881226" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#HOOK.001" gltf-model="#HOOK.001"  scale="1 1 1" position="-1.228018045425415 2.181983709335327 0.9223244190216064" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#LEDGE" gltf-model="#LEDGE"  scale="1 1 1" position="-1.5048294067382812 1.2619385719299316 0.049007825553417206" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#leg" gltf-model="#leg"  scale="1 1 1" position="-1.0521129369735718 0.19731584191322327 -0.2904737591743469" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#leg.001" gltf-model="#leg.001"  scale="1 1 1" position="0.9690684676170349 0.16275519132614136 -1.2037761211395264" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#PICTUR" gltf-model="#PICTUR"  scale="1 1 1" position="-0.09864798188209534 1.6711575984954834 -1.4185959100723267" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#PICTUR.001" gltf-model="#PICTUR.001"  scale="1 1 1" position="-0.101451575756073 1.6760573387145996 -1.4188662767410278" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#pillow" gltf-model="#pillow"  scale="1 1 1" position="-0.6471062898635864 0.4976474642753601 0.4449840188026428" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#pillow.001" gltf-model="#pillow.001"  scale="1 1 1" position="0.5249766111373901 0.46308690309524536 -0.7517421245574951" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#walls" gltf-model="#walls"  scale="1 1 1" position="-0.8748292326927185 1.6520241498947144 -0.2943664789199829" visible="true" shadow="cast: false" ></a-entity>
+
+            <!-- Camera -->
+            <a-entity id="player" 
+                position="0 -0.2 0" 
+                movement-controls="speed: 0.10000000149011612;">
+                <a-entity id="camera" 
+                    camera="near: 0.001" 
+                    position="0 1.7000000476837158 0" 
+                    look-controls="pointerLockEnabled: true">
+                        <a-entity id="cursor" cursor="fuse: false;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 	0.1 0.1 0.1; to: 1 1 1"
+                            position="0 0 -0.1"
+                            geometry="primitive: circle; radius: 0.001;"
+                            material="color: #CCC; shader: flat;"
+                            >
+                        </a-entity>
+                </a-entity>
+                    <a-entity id="leftHand" oculus-touch-controls="hand: left" vive-controls="hand: left"></a-entity>
+					<a-entity id="rightHand" laser-controls oculus-touch-controls="hand: right" vive-controls="hand: right" ></a-entity>
+            </a-entity>
+
+            <!-- Lights -->
+            
+			<a-entity position="-0.5508808493614197 0.6742621660232544 -0.7369051575660706" light="castShadow:false; color:#ffffff; distance:40.0; type:point; intensity:1.0; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+			<a-entity position="1.3583252429962158 3.1255264282226562 0.5574252009391785" light="castShadow:false; color:#ffffff; distance:40.0; type:point; intensity:1.0; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+
+            <!-- Sky -->
+            <a-sky color="#ECECEC"></a-sky>
+        </a-scene>
+    </body>
+</html>
+<!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
